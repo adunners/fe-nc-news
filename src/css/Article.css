@@ -1,0 +1,26 @@
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  
+  h3 {
+    color: black;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+
+  p {
+    color: grey;
+  }
+  
+  h2 {
+    display: flex;
+    justify-content: center;
+  }
