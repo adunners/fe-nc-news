@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getArticleById } from "../utils/api";
 import "../css/IndividualArticle.css"
+import Comments from "./Comments"
 
 export default function IndividualArticle() {
   const { articleId } = useParams();
@@ -33,6 +34,7 @@ export default function IndividualArticle() {
       <p className="individualArticle-p">Votes: {IndividualArticle.votes}</p>
       <p className="individualArticle-p">Comments: {IndividualArticle.comment_count}</p>
     </article>
+    <Comments articleId={articleId}/>
     </>
   );
 }

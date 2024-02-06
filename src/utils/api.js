@@ -13,3 +13,9 @@ export function getArticleById(articleId){
         return response.data.article
     })
 }
+
+export function getArticleIdComments(articleId){
+    return ncNews.get(`/articles/${articleId}/comments`).then((response) => {console.log(response.data)
+        return response.data.comments
+    })
+}
