@@ -1,26 +1,29 @@
 
-section {
+.articles-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
   
   
-  h3 {
+  .articles-h3 {
     color: black;
   }
   
-  img {
+  .articles-img {
     width: 100%;
     height: auto;
   }
   
 
-  p {
+  .articles-p {
     color: grey;
   }
   
-  h2 {
+  .articles-h2 {
     display: flex;
     justify-content: center;
+    color: black;
+    font-size: 45px;
   }
+

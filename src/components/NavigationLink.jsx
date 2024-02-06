@@ -5,7 +5,7 @@ export default function NavigationLink(props){
     const {linkDestination} = props
     return (
     <ul>
-    <Link to={linkDestination} className="NavLink"> {linkDestination} </Link>
+    <Link to={linkDestination} className="NavLink"> {linkDestination === "/" ? "Home" : linkDestination} </Link>
     </ul>
     )
-}
+} 
