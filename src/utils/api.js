@@ -7,3 +7,9 @@ export function getAllArticles(){
         return response.data.articles
     })
 }
+
+export function getArticleById(articleId){
+    return ncNews.get(`/articles/${articleId}`).then((response) => {
+        return response.data.article
+    })
+}

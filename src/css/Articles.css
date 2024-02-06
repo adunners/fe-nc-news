@@ -1,29 +1,29 @@
-
 .articles-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  
-  
-  .articles-h3 {
-    color: black;
-  }
-  
-  .articles-img {
-    width: 100%;
-    height: auto;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
-  .articles-p {
-    color: grey;
-  }
-  
-  .articles-h2 {
-    display: flex;
-    justify-content: center;
-    color: black;
-    font-size: 45px;
-  }
+.articles-h3 {
+  color: black;
+}
 
+.articles-img {
+  width: 100%;
+  height: auto;
+}
+
+.articles-p {
+  color: grey;
+}
+
+.articles-h2 {
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-size: 45px;
+}
+
+.articles-input {
+  width: 135px;
+}

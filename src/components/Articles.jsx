@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 import { getAllArticles } from "../utils/api";
-import "../css/Articles.css"
+import { Link } from "react-router-dom";
+import "../css/Articles.css";
+import SearchArticle from "./SearchArticle"
 
 export default function Articles() {
   const [allArticles, setAllArticles] = useState([]);
+  const [articleId, setArticleId] = useState("");
+  const [listSingleArticle, setListSingleArticle] = useState(false);
 
   useEffect(() => {
     getAllArticles().then((everyArticle) => {
@@ -11,13 +15,35 @@ export default function Articles() {
     });
   }, []);
 
+
+  function defaultPage() {
+    setListSingleArticle(false);
+    setArticleId("");
+  }
+
   return (
     <>
       <h2 className="articles-h2">Articles </h2>
+     <SearchArticle articleId={articleId} setArticleId={setArticleId} setListSingleArticle={setListSingleArticle} allArticles={allArticles}/>
       <section className="articles-section">
-        {allArticles.map((article) => {
-          return (
-          
+        {listSingleArticle ? (
+          <>
+            <h3>Your Article Search</h3>
+            <Link className="articles-link" to={articleId}>
+              Article {articleId}
+            </Link>
+            <button
+              className="articles-button"
+              type="submit"
+              id="submit"
+              onClick={defaultPage}
+            >
+              Back
+            </button>
+          </>
+        ) : (
+          allArticles.map((article) => {
+            return (
               <article key={article.id}>
                 <header>
                   <h3 className="articles-h3">{article.title}</h3>
@@ -35,12 +61,15 @@ export default function Articles() {
                 />
                 <section>
                   <p className="articles-p">Votes: {article.votes}</p>
-                  <p className="articles-p">Comments: {article.comment_count}</p>
+                  <p className="articles-p">
+                    Comments: {article.comment_count}
+                  </p>
                 </section>
               </article>
-          );
-        })}
+            );
+          })
+        )}
       </section>
-      </>
+    </>
   );
 }
