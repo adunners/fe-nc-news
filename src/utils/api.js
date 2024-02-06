@@ -15,7 +15,11 @@ export function getArticleById(articleId){
 }
 
 export function getArticleIdComments(articleId){
-    return ncNews.get(`/articles/${articleId}/comments`).then((response) => {console.log(response.data)
+    return ncNews.get(`/articles/${articleId}/comments`).then((response) => {
         return response.data.comments
     })
+}
+
+export function updateVotes(articleId, votes) {
+    return ncNews.patch(`/articles/${articleId}`, votes)
 }
