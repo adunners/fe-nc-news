@@ -8,14 +8,13 @@ export default function Comments({articleId}) {
 
     useEffect(() => {
         getArticleIdComments(articleId).then((comments) => {
-            console.log(comments)
             setCommentsById(comments)
         })
     },[])
     
     return (
         <>
-        <h3>Comments</h3>
+        <h3 className="comments-h3">Comments</h3>
         <div className="comments-comment">
             {commentsById.map((comment) => {
                 return <article className="comments-article" key={comment.comment_id} >
