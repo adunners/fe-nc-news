@@ -4,10 +4,6 @@
   justify-content: space-around;
 }
 
-.articles-h3 {
-  color: black;
-}
-
 .articles-img {
   width: 100%;
   height: auto;
@@ -26,4 +22,41 @@
 
 .articles-input {
   width: 135px;
+}
+
+
+
+.articles-search-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.articles-h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.articles-link {
+  color: hsl(180, 3%, 6%);
+}
+
+.articles-link-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.articles-img-1 {
+  max-width: 100%;
+  height: auto;
+}
+
+.articles-button{
+  max-height: 30px;
+  max-width: 60px;
+}
+
+.articles-button:hover {
+  background-color: darkgray; 
 }
