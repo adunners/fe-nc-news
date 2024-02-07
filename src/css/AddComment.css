@@ -1,0 +1,17 @@
+.addComment-error{
+    margin-left: 10px;
+    color: red;
+}
+
+.addComment-label{
+ margin-left: 10px;
+}
+
+.addComment-input{
+    margin-top: 10px;
+}
+
+.addComment-submit{
+    margin-top: 10px;
+    margin-left: 10px;
+}

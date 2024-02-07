@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { getArticleIdComments } from "../utils/api";
 import "../css/Comments.css";
 
-export default function Comments({ articleId }) {
-  const [commentsById, setCommentsById] = useState([]);
+export default function Comments({ articleId, commentsById, setCommentsById }) {
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

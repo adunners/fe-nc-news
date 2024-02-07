@@ -4,10 +4,12 @@ import { getArticleById } from "../utils/api";
 import "../css/IndividualArticle.css"
 import Comments from "./Comments"
 import Votes from "./Votes"
+import AddComment from "./AddComment"
 
 export default function IndividualArticle() {
   const { articleId } = useParams();
   const [IndividualArticle, setIndividualArticle] = useState({});
+  const [commentsById, setCommentsById] = useState([]);
 
   useEffect(() => {
     getArticleById(articleId).then((article) => {
@@ -38,7 +40,8 @@ export default function IndividualArticle() {
       <p className="individualArticle-p">Comments: {IndividualArticle.comment_count}</p>
     </article>
     <Votes articleId={articleId} setIndividualArticle={setIndividualArticle}/>
-    <Comments articleId={articleId}/>
+    <AddComment articleId={articleId} setCommentsById={setCommentsById}/>
+    <Comments articleId={articleId} commentsById={commentsById} setCommentsById={setCommentsById}/>
     </>
   );
 }

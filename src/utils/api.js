@@ -23,3 +23,7 @@ export function getArticleIdComments(articleId){
 export function updateVotes(articleId, votes) {
     return ncNews.patch(`/articles/${articleId}`, votes)
 }
+
+export function postComment(articleId, commentToPost){
+    return ncNews.post(`/articles/${articleId}/comments`, commentToPost)
+}
