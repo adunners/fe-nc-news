@@ -9,6 +9,7 @@ export default function Articles() {
   const [articleId, setArticleId] = useState("");
   const [listSingleArticle, setListSingleArticle] = useState(false);
 
+
   useEffect(() => {
     getAllArticles().then((everyArticle) => {
       setAllArticles(everyArticle);

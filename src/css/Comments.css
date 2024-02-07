@@ -1,7 +1,15 @@
+.comments-h3 {
+  font-size: 25px;
+  color: black;
+  padding-left:40px;
+}
+
+
 .comments-article {
     padding: 20px;
     background-color: white;
     border: 1px solid black;
+    font-size: 22px;
   }
   
   .comments-comment {
@@ -11,18 +19,18 @@
     margin-bottom: 15px;
   }
   
-  .comment-author {
+  .comments-author {
     font-weight: bold;
     color: grey;
   }
   
-  .comment-content {
+  .comments-content {
     margin-top: 10px;
-    color: grey;
+    color:black;
   }
   
-  .comment-time {
-    font-size: 12px;
-    color: grey;
+  .comments-time {
+    font-size:18px;
+    color: black;
   }
   

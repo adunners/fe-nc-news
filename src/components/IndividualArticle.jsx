@@ -7,7 +7,7 @@ import Votes from "./Votes"
 
 export default function IndividualArticle() {
   const { articleId } = useParams();
-  const [IndividualArticle, setIndividualArticle] = useState({});
+  const [IndividualArticle, setIndividualArticle] = useState([]);
 
   useEffect(() => {
     getArticleById(articleId).then((article) => {

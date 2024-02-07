@@ -1,0 +1,21 @@
+.votes-button{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.votes-happyButton {
+    margin-right: 200px;
+    font-size: 18px;
+    font-family: monospace;
+}
+.votes-sadButton{
+    margin-left: 200px;
+    font-size: 18px;
+    font-family: monospace;
+}
+
+.votes-error{
+    padding: 10px;
+    color: red;
+}
