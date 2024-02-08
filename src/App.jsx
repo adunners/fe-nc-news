@@ -8,7 +8,7 @@ import IndividualArticle from "./components/IndividualArticle"
 
 
 function App() {
-
+const loggedInUser = "happyamy2016"
 
   return (
     <>
@@ -18,7 +18,7 @@ function App() {
     <Routes>
     <Route path="/" element = {<Home />} />
     <Route path ="/articles" element={<Articles />} />
-    <Route path ="/articles/:articleId" element={<IndividualArticle/>} />
+    <Route path ="/articles/:articleId" element={<IndividualArticle  loggedInUser={loggedInUser}/>} />
     <Route path ="/topics" element={<Topics />} />
     </Routes>
     </main>

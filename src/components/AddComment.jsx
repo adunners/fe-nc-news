@@ -2,7 +2,7 @@ import {useState} from "react"
 import { postComment } from "../utils/api"
 import "../css/AddComment.css"
 
-export default function AddComment({articleId, setCommentsById}) {
+export default function AddComment({articleId, setCommentsById, loggedInUser}) {
 const [username, setUsername] = useState("")
 const [body, setBody] = useState("")
 const [error, setError] = useState(null)
@@ -23,7 +23,8 @@ function onClickHandler(event){
 
     const commentToInitiallyShowUser = {author:username, body: body, votes:0, created_at: new Date().toLocaleDateString(), comment_id: Date.now() }
 
-    setCommentsById((currComments) => {return [commentToInitiallyShowUser,...currComments]})
+    if(loggedInUser === username){
+    setCommentsById((currComments) => {return [commentToInitiallyShowUser,...currComments]})}
     
 }
 

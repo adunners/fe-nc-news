@@ -4,8 +4,11 @@ import "../css/Votes.css"
 
 export default function Votes({articleId, setIndividualArticle}) {
 const [error, setError] = useState(null)
+const [firstClick, setFirstClick] = useState(true)
 
 function handleClick(event) {
+  
+    if(firstClick === true){
     let increment
     if(event.target.innerText === "Vote 👍") increment = 1
     else{increment = -1}
@@ -22,6 +25,9 @@ function handleClick(event) {
     setIndividualArticle((currArticle) => {
         return {...currArticle, votes: currArticle.votes + increment}
     })
+    }
+
+    setFirstClick(false)
 }
 
     return <div className="votes-button">

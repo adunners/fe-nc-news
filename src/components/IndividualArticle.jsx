@@ -6,7 +6,7 @@ import Comments from "./Comments"
 import Votes from "./Votes"
 import AddComment from "./AddComment"
 
-export default function IndividualArticle() {
+export default function IndividualArticle({loggedInUser}) {
   const { articleId } = useParams();
   const [IndividualArticle, setIndividualArticle] = useState({});
   const [commentsById, setCommentsById] = useState([]);
@@ -40,7 +40,7 @@ export default function IndividualArticle() {
       <p className="individualArticle-p">Comments: {IndividualArticle.comment_count}</p>
     </article>
     <Votes articleId={articleId} setIndividualArticle={setIndividualArticle}/>
-    <AddComment articleId={articleId} setCommentsById={setCommentsById}/>
+    <AddComment articleId={articleId} setCommentsById={setCommentsById}  loggedInUser={loggedInUser}/>
     <Comments articleId={articleId} commentsById={commentsById} setCommentsById={setCommentsById}/>
     </>
   );
