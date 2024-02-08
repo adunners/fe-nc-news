@@ -27,3 +27,13 @@ export function updateVotes(articleId, votes) {
 export function postComment(articleId, commentToPost){
     return ncNews.post(`/articles/${articleId}/comments`, commentToPost)
 }
+
+export function deleteComment(commentId){
+    return ncNews.delete(`/comments/${commentId}`)
+}
+
+export function getAllComments(){
+    return ncNews.get('/comments').then((response) => {
+      return response.data.comments
+    })
+}

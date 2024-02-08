@@ -41,7 +41,7 @@ export default function IndividualArticle({loggedInUser}) {
     </article>
     <Votes articleId={articleId} setIndividualArticle={setIndividualArticle}/>
     <AddComment articleId={articleId} setCommentsById={setCommentsById}  loggedInUser={loggedInUser}/>
-    <Comments articleId={articleId} commentsById={commentsById} setCommentsById={setCommentsById}/>
+    <Comments articleId={articleId} commentsById={commentsById} setCommentsById={setCommentsById} loggedInUser={loggedInUser}/>
     </>
   );
 }
