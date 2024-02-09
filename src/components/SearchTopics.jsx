@@ -8,14 +8,11 @@ export default function SearchTopics({setArticlesByTopic}) {
       event.preventDefault()
    
     if(event.target.value === "all"){
-        getAllArticles().then((allArticles) => {setArticlesByTopic(allArticles)} )
+    
         navigate(`/topics`)
     }
     else{
-    const selectedTopic = event.target.value;
-    const query = {topic: selectedTopic}
-    getAllArticles(query).then((articleByTopic) => setArticlesByTopic(articleByTopic))
-    navigate(`/topics?topic=${selectedTopic}`);
+    navigate(`/topics?topic=${event.target.value}`);
   }
 
   }
@@ -29,7 +26,6 @@ export default function SearchTopics({setArticlesByTopic}) {
         <select
           name="topicSearch"
           id="topicSearch"
-          defaultValue="all"
           onChange={handleTopicChange}
         >
         <option value="all">All</option>
