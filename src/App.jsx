@@ -8,7 +8,7 @@ import IndividualArticle from "./components/IndividualArticle"
 
 
 function App() {
-const loggedInUser = "happyamy2016"
+const loggedInUser = "grumpy19"
 
   return (
     <>

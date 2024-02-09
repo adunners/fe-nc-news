@@ -25,5 +25,9 @@ export function updateVotes(articleId, votes) {
 }
 
 export function postComment(articleId, commentToPost){
-    return ncNews.post(`/articles/${articleId}/comments`, commentToPost)
+    return ncNews.post(`/articles/${articleId}/comments`, commentToPost).then((response) => { return response.data.addedComment})
+}
+
+export function deleteComment(commentId){
+    return ncNews.delete(`/comments/${commentId}`)
 }

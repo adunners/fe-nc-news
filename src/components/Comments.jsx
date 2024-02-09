@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { getArticleIdComments } from "../utils/api";
 import "../css/Comments.css";
+import DeleteComments from "./DeleteComments"
 
-export default function Comments({ articleId, commentsById, setCommentsById }) {
+export default function Comments({ articleId, commentsById, setCommentsById, loggedInUser}) {
 
   const [isLoading, setIsLoading] = useState(true);
+
 
   useEffect(() => {
     getArticleIdComments(articleId).then((comments) => {
@@ -37,6 +39,7 @@ export default function Comments({ articleId, commentsById, setCommentsById }) {
                       Published:{" "}
                       {new Date(comment.created_at).toLocaleDateString()}
                     </p>
+                    <DeleteComments loggedInUser={loggedInUser} comment={comment} commentsById={commentsById} setCommentsById={setCommentsById}/>
                   </article>
                 );
               })
