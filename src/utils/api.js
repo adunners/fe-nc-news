@@ -30,4 +30,5 @@ export function postComment(articleId, commentToPost){
 
 export function deleteComment(commentId){
     return ncNews.delete(`/comments/${commentId}`)
+
 }

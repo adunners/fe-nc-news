@@ -14,8 +14,8 @@ const [loggedInUser, setLoggedInUser] = useState("grumpy19")
 
   return (
     <>
-    <Header />
     <UserName.Provider value={loggedInUser}>
+    <Header />
     <Navigation />
     <main>
     <Routes>
