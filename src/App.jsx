@@ -1,18 +1,21 @@
 import {Routes, Route} from "react-router-dom"
+import {useState} from "react"
 import Header from "./components/Header"
 import Navigation from "./components/Navigation"
 import Articles from "./components/Articles"
 import Topics from "./components/Topics"
 import Home from "./components/Home"
 import IndividualArticle from "./components/IndividualArticle"
+import UserName from "./contexts/UserName"
 
 
 function App() {
-const loggedInUser = "grumpy19"
+const [loggedInUser, setLoggedInUser] = useState("grumpy19")
 
   return (
     <>
     <Header />
+    <UserName.Provider value={loggedInUser}>
     <Navigation />
     <main>
     <Routes>
@@ -22,7 +25,7 @@ const loggedInUser = "grumpy19"
     <Route path ="/topics" element={<Topics />} />
     </Routes>
     </main>
-
+    </UserName.Provider>
     </>
   )
 }

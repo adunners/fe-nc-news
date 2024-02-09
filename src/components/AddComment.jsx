@@ -1,14 +1,14 @@
-import {useState, useEffect} from "react"
+import {useState, useContext} from "react"
 import {  postComment } from "../utils/api"
 import "../css/AddComment.css"
+import UserName from "../contexts/UserName"
 
-export default function AddComment({articleId, setCommentsById, loggedInUser}) {
+export default function AddComment({articleId, setCommentsById}) {
 const [username, setUsername] = useState("")
 const [body, setBody] = useState("")
 const [error, setError] = useState(null)
-const [updateCommentId, setUpdateCommentId] = useState([])
-const [currentLastCommentId, setCurrentLastCommentId] = useState([])
 
+const loggedInUser = useContext(UserName)
 
 function textInput(event){
     if(event.target.id === "username"){
@@ -28,6 +28,8 @@ function onClickHandler(event){
          setCommentsById((currComments) => {return [response,...currComments]})}
         setError(null)})
         .catch((error) => {setError("comment not posted - incorrect username")})
+        setUsername("")
+        setBody("")
 }
 
 return (

@@ -85,3 +85,8 @@
 .articles-link{
   text-decoration: none;
 }
+
+.articles-error{
+  margin-left: 10px;
+  color: red
+}
