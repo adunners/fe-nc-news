@@ -1,0 +1,92 @@
+
+.topicsCard-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .topicsCard-card {
+    padding-left: 10px;
+    margin-top: 10px;
+    background-color: hsl(0, 0%, 98%);
+    border: 1px solid white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+  }
+  
+  .topicsCard-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .topicsCard-individualCard{
+    margin-top: 50px;
+    margin-left: 50px;
+    background-color: hsl(0, 0%, 98%);
+    padding: 15px;
+    container: 150px 250px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  .topicsCard-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .topicsCard-details {
+    padding: 15px;
+  }
+  
+  .topicsCard-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color:black;
+  }
+  
+  .topicsCard-p {
+    font-size: 0.9rem;
+    color: grey;
+  }
+  
+  .topicsCard-link {
+    color: black;
+  }
+  
+  .topicsCard-link:hover {
+    text-decoration: underline;
+  }
+  
+  .topicsCard-input {
+    width: 135px;
+  }
+  
+  .topicsCard-button{
+    max-height: 20px;
+    max-width: 60px;
+    margin-top: 10px;
+  }
+  
+  .topicsCard-h2, .topicsCard-label{
+   margin-left: 15px;
+   font-size: 1.5rem;
+  }
+  
+  .topicsCard-input {
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 16px;
+    width: 200px;
+  }
+  
+  .topicsCard-link{
+    text-decoration: none;
+  }
+  
+  .topicsCard-error{
+    margin-left: 10px;
+    color: red
+  }

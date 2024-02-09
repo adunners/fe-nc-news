@@ -7,6 +7,7 @@ import Topics from "./components/Topics"
 import Home from "./components/Home"
 import IndividualArticle from "./components/IndividualArticle"
 import UserName from "./contexts/UserName"
+import TopicsCard from "./components/TopicsCard"
 
 
 function App() {
