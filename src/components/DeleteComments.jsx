@@ -1,14 +1,14 @@
 import { deleteComment } from "../utils/api"
-import {useState} from "react"
+import {useState, useContext} from "react"
+import UserName from "../contexts/UserName"
 
 
-export default function DeleteComments({loggedInUser, comment, commentsById, setCommentsById}) {
+export default function DeleteComments({ comment, commentsById, setCommentsById}) {
 const [error, setError] = useState(null)
 
+const loggedInUser = useContext(UserName)
 
     function clickHandler(){
-        console.log(commentsById, "commentById")
-        console.log(comment.comment_id, "detelted comment.comment_id")
         deleteComment(comment.comment_id).then(() => {setError(null)}).catch((error) => {setError("error in request - comment not deleted")})
 
         const updatedComments = commentsById.filter((articleComment) => {return articleComment.comment_id !== comment.comment_id})

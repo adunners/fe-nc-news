@@ -51,6 +51,7 @@ export default function Articles() {
                       alt="image from the selected article"
                     />
                   </Link>
+                    </div>
                 <button
                   className="articles-button"
                   type="submit"
@@ -59,8 +60,6 @@ export default function Articles() {
                   >
                   Back
                 </button>
-                    </div>
-                
             </>
           ) : 
           (

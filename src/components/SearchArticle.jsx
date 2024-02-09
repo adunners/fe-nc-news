@@ -1,13 +1,19 @@
-
+import {useState} from "react"
 
 export default function SearchArticle ({articleId, setArticleId, setListSingleArticle, allArticles}) {
+  const [error, setError] = useState(null)
     function handleOnChange(event) {
         setArticleId(event.target.value)
       }
     
       function onClickHandler(event) {
         event.preventDefault();
-        setListSingleArticle(true);
+        if(articleId.length !== 0 && articleId > 0 && articleId <= allArticles.length )
+        {setError(null)
+          setListSingleArticle(true)}
+        else{
+          setArticleId("")
+          setError("Please enter a valid article number")}
       }
     
    return (
@@ -33,6 +39,7 @@ export default function SearchArticle ({articleId, setArticleId, setListSingleAr
     >
       Submit
     </button>
+    <p className="articles-error">{error ? error : null}</p>
   </form>
    )
 }
