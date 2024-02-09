@@ -1,20 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-import { getAllArticles } from '../utils/api';
 
-export default function SearchTopics({setArticlesByTopic}) {
+
+export default function SearchTopics({setArticlesByTopic, defaultValueDropDown}) {
+  console.log(defaultValueDropDown, "dropdown value")
   const navigate = useNavigate();
 
   function handleTopicChange(event) {
       event.preventDefault()
-   
-    if(event.target.value === "all"){
-    
-        navigate(`/topics`)
-    }
-    else{
     navigate(`/topics?topic=${event.target.value}`);
-  }
-
   }
 
   return (
@@ -26,6 +19,7 @@ export default function SearchTopics({setArticlesByTopic}) {
         <select
           name="topicSearch"
           id="topicSearch"
+          defaultValue={defaultValueDropDown}
           onChange={handleTopicChange}
         >
         <option value="all">All</option>

@@ -8,8 +8,11 @@ import { useSearchParams } from "react-router-dom"
 export default function Topics() {
    const [articlesByTopic, setArticlesByTopic] = useState([])
    const [searchParams, setSearchParams] = useSearchParams()
+   const [defaultValueDropDown, setDefaultValueDropDown] = useState(searchParams.get("topic"))
 
     const topicCategory = searchParams.get("topic")
+
+    console.log(topicCategory, "topicsCategory")
 
    useEffect(() => {
     if(topicCategory === "all" || null){
@@ -20,15 +23,14 @@ export default function Topics() {
     const query = {topic: topicCategory}
     getAllArticles(query).then((articleByTopic) => setArticlesByTopic(articleByTopic))
     
+    setDefaultValueDropDown(topicCategory)
   }
    }, [topicCategory])
-
-console.log(articlesByTopic, "in topics")
 
     return (
     <>
     <h1> Articles by Topic</h1>
-    <SearchTopics  setArticlesByTopic={setArticlesByTopic}/>
+    <SearchTopics  setArticlesByTopic={setArticlesByTopic} defaultValueDropDown={defaultValueDropDown}/>
     <TopicsCard articlesByTopic={articlesByTopic} />
     </>
     )
