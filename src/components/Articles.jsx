@@ -62,18 +62,21 @@ export default function Articles() {
                     </div>
                 
             </>
-          ) : (
-              allArticles.map((article) => {
-                return (
-                  <div  className="articles-card" key={article.id}>
+          ) : 
+          (
+            allArticles.map((article) => {
+              return (
+                <div  className="articles-card" key={article.article_id}>
+                <Link className="articles-link" to={`/articles/${article.article_id}`}>
                     <img
                       src={article.article_img_url}
                       alt="image relating to article"
                       className="articles-image"
-                    />
+                      />
                       <h3 className="articles-title">{article.title}</h3>
+                      </Link>
                       <p className="articles-p">Topic: {article.topic}</p>
-                      <p className="articles-p">Author: {article.artic}</p>
+                      <p className="articles-p">Author: {article.author}</p>
                       <p className="articles-p">
                         Published:
                         {new Date(article.created_at).toLocaleDateString()}
@@ -82,11 +85,11 @@ export default function Articles() {
                       <p className="articles-p">
                         Comments: {article.comment_count}
                       </p>
-                    </div>
-                );
+                    </div> 
+               );
               })
-         
-          )}
+              )}
+      
       </section>
       )}
     </>

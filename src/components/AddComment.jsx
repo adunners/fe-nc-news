@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react"
-import {  getAllComments, postComment } from "../utils/api"
+import {  postComment } from "../utils/api"
 import "../css/AddComment.css"
 
 export default function AddComment({articleId, setCommentsById, loggedInUser}) {
@@ -23,14 +23,11 @@ function onClickHandler(event){
     event.preventDefault()
 
     const commentToPost = {username, body}
-    postComment(articleId, commentToPost).then(() => {
+    postComment(articleId, commentToPost).then((response) => {     
+         if(loggedInUser === username){
+         setCommentsById((currComments) => {return [response,...currComments]})}
         setError(null)})
         .catch((error) => {setError("comment not posted - incorrect username")})
-
-    const commentToInitiallyShowUser = {author:username, body: body, votes:0, created_at: new Date().toLocaleDateString(), comment_id: Date.now()}
-
-    if(loggedInUser === username){
-    setCommentsById((currComments) => {return [commentToInitiallyShowUser,...currComments]})}
 }
 
 return (
